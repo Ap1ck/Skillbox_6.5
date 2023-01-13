@@ -107,5 +107,11 @@ public class GameScript : MonoBehaviour
     {
         _inPlayMode = true;
         _resultText.text = " ";
+
+        _pin1 = 0;
+        _pin2 = 0;
+        _pin3 = 0;
+
+        RewriteTheValues();
     }
 }
