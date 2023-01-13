@@ -7,22 +7,23 @@ public class GameScript : MonoBehaviour
 {
     [SerializeField] private Text _timerText;
     [SerializeField] private Text _resultText;
+
     [SerializeField] private Text _pinText1;
     [SerializeField] private Text _pinText2;
     [SerializeField] private Text _pinText3;
 
-    [SerializeField] private int _toolForPin1 = 5;
-    [SerializeField] private int _toolForPin2 = 5;
-    [SerializeField] private int _toolForPin3 = 5;
+    [SerializeField] private int _currectPin1 = 0;
+    [SerializeField] private int _currectPin2 = 9;
+    [SerializeField] private int _currectPin3 = 9;
 
+    private bool _inPlayMode = true;
 
-    private int _currectPin1 = 0;
-    private int _currectPin2 = 9;
-    private int _currectPin3 = 9;
-
-    private float _lastTime;
-    private int _fixedTime = 5;
+    private float _specifiedTime = 60;
     private float _currectTime;
+
+    private int _pin1;
+    private int _pin2;
+    private int _pin3;
 
     private void Start()
     {
@@ -31,41 +32,80 @@ public class GameScript : MonoBehaviour
 
     private void Update()
     {
-        _currectTime = Mathf.Round(_fixedTime - Time.time);
+        if (_inPlayMode)
+        {
+            WorkingTime();
+        }
+    }
+
+    private void WorkingTime()
+    {
+        _currectTime = Mathf.Round(_specifiedTime - Time.time);
         _timerText.text = _currectTime.ToString();
     }
 
-
-    public void Change(int pin1, int pin2, int pin3)
+    public void UseDriil()
     {
-        _toolForPin1 += pin1;
-        _toolForPin2 += pin2;
-        _toolForPin3 += pin3;
+        _pin1 += +1;
+        _pin2 += -1;
+        _pin3 += 0;
+        ChekOutPin();
+        RewriteTheValues();
+        Play();
+    }
 
-        _toolForPin1 = Mathf.Clamp(_toolForPin1, 0, 9);
-        _toolForPin2 = Mathf.Clamp(_toolForPin2, 0, 9);
-        _toolForPin3 = Mathf.Clamp(_toolForPin3, 0, 9);
+    public void UseHammer()
+    {
+        _pin1 += -1;
+        _pin2 += 2;
+        _pin3 += -1;
+        ChekOutPin();
+        RewriteTheValues();
+        Play();
+    }
+
+    public void UseLockPick()
+    {
+        _pin1 += -1;
+        _pin2 += 1;
+        _pin3 += 1;
+        ChekOutPin();
+        RewriteTheValues();
+        Play();
+    }
+
+    public void ChekOutPin()
+    {
+        _pin1 = Mathf.Clamp(_pin1, 0, 9);
+        _pin2 = Mathf.Clamp(_pin2, 0, 9);
+        _pin3 = Mathf.Clamp(_pin3, 0, 9);
         RewriteTheValues();
     }
 
     private void RewriteTheValues()
     {
-        _pinText1.text = $"{_toolForPin1}";
-        _pinText2.text = $"{_toolForPin2}";
-        _pinText3.text = $"{_toolForPin3}";
-
-        Play();
+        _pinText1.text = $"{_pin1}";
+        _pinText2.text = $"{_pin2}";
+        _pinText3.text = $"{_pin3}";
     }
 
     private void Play()
     {
-        if (_toolForPin1 == _currectPin1 && _currectPin2 == _toolForPin2 && _currectPin3 == _toolForPin3)
+        if (_pin1 == _currectPin1 && _currectPin2 == _pin2 && _currectPin3 == _pin3)
         {
-            Debug.Log(_resultText.text = "Вы победили");
+            _resultText.text = "Вы победили";
+            _inPlayMode = false;
         }
         else if (_currectTime == 0)
         {
-            Debug.Log(_resultText.text = "Поражение");
+            _resultText.text = "Вы проиграли";
+            _inPlayMode = false;
         }
+    }
+
+    public void ResetGame()
+    {
+        _inPlayMode = true;
+        _resultText.text = " ";
     }
 }

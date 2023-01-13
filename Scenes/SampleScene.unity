@@ -475,7 +475,6 @@ GameObject:
   - component: {fileID: 355668410}
   - component: {fileID: 355668409}
   - component: {fileID: 355668408}
-  - component: {fileID: 355668411}
   m_Layer: 5
   m_Name: HammerButton
   m_TagString: Untagged
@@ -547,19 +546,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 355668409}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 355668411}
-        m_TargetAssemblyTypeName: Pins, Assembly-CSharp
-        m_MethodName: Use
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &355668409
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -598,22 +585,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 355668406}
   m_CullTransparentMesh: 1
---- !u!114 &355668411
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 355668406}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0171a01e3fc715d4b97d0ad4c3b34824, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameScript: {fileID: 1449883768}
-  _pin1: -1
-  _pin2: 2
-  _pin3: -1
 --- !u!1 &618388042
 GameObject:
   m_ObjectHideFlags: 0
@@ -702,7 +673,6 @@ GameObject:
   - component: {fileID: 675211010}
   - component: {fileID: 675211009}
   - component: {fileID: 675211008}
-  - component: {fileID: 675211011}
   m_Layer: 5
   m_Name: DrillButton
   m_TagString: Untagged
@@ -774,19 +744,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 675211009}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 675211011}
-        m_TargetAssemblyTypeName: Pins, Assembly-CSharp
-        m_MethodName: Use
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &675211009
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -825,22 +783,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 675211006}
   m_CullTransparentMesh: 1
---- !u!114 &675211011
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 675211006}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0171a01e3fc715d4b97d0ad4c3b34824, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameScript: {fileID: 1449883768}
-  _pin1: 1
-  _pin2: -1
-  _pin3: 0
 --- !u!1 &696717108
 GameObject:
   m_ObjectHideFlags: 0
@@ -1635,14 +1577,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cf50c33b75b37945a79ebef9d831573, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _timerText: {fileID: 1533589854}
-  _resultText: {fileID: 2055590486}
-  _pinText1: {fileID: 696717110}
-  _pinText2: {fileID: 36810003}
-  _pinText3: {fileID: 2113550700}
-  _toolForPin1: 5
-  _toolForPin2: 5
-  _toolForPin3: 5
+  _timerText: {fileID: 0}
+  _resultText: {fileID: 0}
+  _pinText1: {fileID: 0}
+  _pinText2: {fileID: 0}
+  _pinText3: {fileID: 0}
+  _toolForPin1: 0
+  _toolForPin2: 0
+  _toolForPin3: 0
 --- !u!1 &1501087209
 GameObject:
   m_ObjectHideFlags: 0
@@ -1889,7 +1831,6 @@ GameObject:
   - component: {fileID: 1644100750}
   - component: {fileID: 1644100749}
   - component: {fileID: 1644100748}
-  - component: {fileID: 1644100751}
   m_Layer: 5
   m_Name: LockpickButton
   m_TagString: Untagged
@@ -1961,19 +1902,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1644100749}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1644100751}
-        m_TargetAssemblyTypeName: Pins, Assembly-CSharp
-        m_MethodName: Use
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1644100749
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2012,22 +1941,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1644100746}
   m_CullTransparentMesh: 1
---- !u!114 &1644100751
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1644100746}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0171a01e3fc715d4b97d0ad4c3b34824, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameScript: {fileID: 1449883768}
-  _pin1: -1
-  _pin2: 1
-  _pin3: 1
 --- !u!1 &1702393862
 GameObject:
   m_ObjectHideFlags: 0
